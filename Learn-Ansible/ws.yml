@@ -1,0 +1,7 @@
+---
+
+- hosts: webserver
+  sudo: yes
+  gather _facts: no
+  roles:
+    - webserver
