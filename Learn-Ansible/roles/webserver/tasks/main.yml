@@ -1,8 +1,7 @@
 ---
- -tasks:
-    - name: "Install Apache, MySQL, and PHP5"
-      apt: name={{ item }} state=present
-      with_items:
+  - name: "Install Apache, MySQL, and PHP5"
+    apt: name={{ item }} state=present
+    with_items:
         - apache2
         - mysql-server
         - python-mysqldb
@@ -10,17 +9,17 @@
         - php-pear
         - php5-mysql
 
-    - name: "Turn on Apache and MySQL and set them to run on boot"
-      service: name={{ item }} state=started enabled=yes
-      with_items:
+  - name: "Turn on Apache and MySQL and set them to run on boot"
+    service: name={{ item }} state=started enabled=yes
+    with_items:
         - apache2
         - mysql
 
-    - name: Create a database
-      mysql_db: name=Db
+  - name: Create a database
+    mysql_db: name=Db
                 state=present
 
-    - name: Create a new user for connections
-      mysql_user: name=webapp
+  - name: Create a new user for connections
+    mysql_user: name=webapp
                   password=simpson95
-                  priv=*.*:ALL state=present
+    priv=*.*:ALL state=present
