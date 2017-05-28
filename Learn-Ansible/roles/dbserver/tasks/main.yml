@@ -1,0 +1,8 @@
+---
+
+  - name: Ensure Mariadb is installed
+    yum: name=mariadb-server state=present
+  
+  - name: Start Mariadb
+    service: name=mariadb enabled=yes state=started
+ 

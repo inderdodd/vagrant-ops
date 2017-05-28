@@ -1,0 +1,9 @@
+---
+
+- hosts: dbserver
+  sudo: yes
+ 
+  roles:
+    - dbserver
+
+

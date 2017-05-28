@@ -1,0 +1,19 @@
+---
+ - name: Install the nginx repository
+   yum: name=http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm state=present
+
+ - name: Install nginx
+   yum: name=nginx state=present
+
+ - name: Start nginx
+   service: name=nginx enabled=yes state=started
+
+ - name: Ensure that php is installed
+   yum:  name=php state=present
+
+ - name: Ensure that php-mysql is installed
+   yum: name=php-mysql state=present
+
+ - name: Install php module
+   yum: name=php-fpm state=present
+ 
