@@ -1,0 +1,30 @@
+---
+- homebrew: name={{item}} state=present
+  with_items:
+    - qt
+    - v8
+    - graphicsmagick
+    - tesseract
+    - phantomjs
+    - nodejs
+    - imagemagick
+    - libyaml
+    - libxml2
+    - libxslt
+    - libksba
+    - qpdf
+
+- homebrew_cask: name={{item}} state=present
+  with_items:
+    - xquartz
+
+# requires xquartz
+- homebrew: name=poppler state=present
+
+- include: wkhtmltopdf.yml 
+- include: mysql.yml
+- include: elasticsearch.yml
+- include: rvm.yml
+- include: pdftk.yml
+- include: memcached.yml
+

@@ -1,0 +1,6 @@
+---
+- name: "Install XQuartz"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/Utilities/XQuartz.app"
+           download_url="http://xquartz-dl.macosforge.org/SL/XQuartz-2.7.6.dmg"
+           download_to="xquartz.dmg"

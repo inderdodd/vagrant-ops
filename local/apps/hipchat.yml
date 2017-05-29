@@ -1,0 +1,6 @@
+---
+- name: "Install Hipchat"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/Hipchat.app"
+           download_url="https://financeit.hipchat.com/downloads/latest/mac"
+           download_to="hipchat.dmg"

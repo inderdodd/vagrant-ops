@@ -1,0 +1,7 @@
+---
+- name: "Install pdftk"
+  mac_app: downloads_dir={{downloads}}
+           binary_check="pdftk"
+           download_url="http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk_server-2.02-mac_osx-10.6-setup.pkg"
+           download_to="pdftk.pkg"
+

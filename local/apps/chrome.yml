@@ -1,0 +1,6 @@
+---
+- name: "Install Google Chrome"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/Google Chrome.app"
+           download_url="https://dl.google.com/chrome/mac/stable/CHFA/googlechrome.dmg"
+           download_to="chrome.dmg"

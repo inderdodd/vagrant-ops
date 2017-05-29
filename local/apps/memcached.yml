@@ -1,0 +1,4 @@
+---
+- name: "Install memcached"
+  homebrew: name=memcached state=present
+- shell: ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents creates=~/Library/LaunchAgents/homebrew.mxcl.memcached.plist

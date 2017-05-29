@@ -1,0 +1,17 @@
+---
+- name: Run Homebrew install script
+  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" creates=/usr/local/bin/brew
+  register: brew_result
+
+- lineinfile: create=yes dest=~/.bashrc line=PATH=/usr/local/bin:\$PATH # FOR BREW
+- lineinfile: create=yes dest=~/.zshrc line=PATH=/usr/local/bin:\$PATH # FOR BREW
+
+- file: path=/usr/local owner={{ansible_user_id}} recurse=yes
+  sudo: yes
+
+- homebrew_tap: tap=homebrew/dupes state=present
+- shell: brew install caskroom/cask/brew-cask
+
+- shell: brew update
+- shell: brew cask update
+

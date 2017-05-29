@@ -1,0 +1,13 @@
+CREATE USER qa_admin;
+SET PASSWORD FOR qa_admin = PASSWORD ('PUT_YOUR_PW_HERE');
+GRANT
+  SELECT,
+  INDEX,
+  INSERT,
+  UPDATE,
+  DELETE,
+  CREATE,
+  DROP,
+  ALTER,
+  CREATE TEMPORARY TABLES
+ON *.* to 'qa_admin'@'%';

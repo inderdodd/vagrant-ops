@@ -1,0 +1,12 @@
+---
+- stat: path=/etc/profile.d/rvm.sh
+  register: rvm_folder
+
+- name: install rvm
+  shell: "curl -sSL https://get.rvm.io | bash"
+  when: rvm_folder.stat.isdir is not defined
+
+- shell: bash -l -c 'CC=clang rvm autolibs enable'
+- shell: bash -l -c 'CC=clang rvm requirements'
+- shell: bash -l -c 'CC=clang rvm install ruby-1.9.3-p484'
+

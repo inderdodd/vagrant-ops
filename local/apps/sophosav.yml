@@ -1,0 +1,5 @@
+---
+  - name: "Install SophosAV"
+  - shell: wget http://192.168.1.148/SophosUpdate/Sophos%20Installer%20El-Capitan.zip -O ~/Downloads/sophos.zip
+  - shell: unzip ~/Downloads/sophos.zip -d ~/Downloads/sophostemp/
+  - shell: sudo "./Sophos Installer.app/Contents/MacOS/tools/InstallationDeployer" --install chdir=~/Downloads/sophostemp/

@@ -1,0 +1,4 @@
+---
+- name: "Install elasticsearch"
+  homebrew: name=elasticsearch state=present
+- shell: ln -sfv /usr/local/opt/elasticsearch/*.plist ~/Library/LaunchAgents creates=~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist

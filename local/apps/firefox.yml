@@ -1,0 +1,6 @@
+---
+- name: "Install Firefox"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/Firefox.app"
+           download_url="https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/latest/mac/en-US/Firefox%2030.0.dmg"
+           download_to="firefox.dmg"

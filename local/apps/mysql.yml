@@ -1,0 +1,4 @@
+---
+- name: "Install mysql"
+  homebrew: name=homebrew/versions/mysql56 state=present
+- shell: ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents creates=~/Library/LaunchAgents/homebrew.mxcl.mysql.plist

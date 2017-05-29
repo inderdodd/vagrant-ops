@@ -1,0 +1,8 @@
+---
+- name: "Install VirtualBox"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/VirtualBox.app"
+           download_url="http://download.virtualbox.org/virtualbox/4.3.14/VirtualBox-4.3.14-95030-OSX.dmg"
+           download_to="virtual_box.dmg"
+
+

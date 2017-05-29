@@ -1,0 +1,43 @@
+---
+- homebrew: name={{item}} state=present
+  with_items:
+    - cmake
+    - python
+    - the_silver_searcher
+    - git
+    - autoconf
+    - automake
+    - libtool
+    - pkg-config
+    - readline
+    - sqlite
+    - wget
+    - openssl
+    - ctags
+    - tmux
+    - reattach-to-user-namespace
+
+- homebrew_cask: name={{item}} state=present
+  with_items:
+    - java
+    - hipchat
+    - alfred
+    - sequel-pro
+    - google-chrome
+    - iterm2
+    - firefox
+    - virtualbox
+    - vagrant
+    - sublime-text
+
+- shell: vagrant plugin list | grep vagrant-hostmanager
+  register: hostmanager_list
+  ignore_errors: yes
+- shell: vagrant plugin install vagrant-hostmanager
+  when:  hostmanager_list | failed
+
+- shell: vagrant plugin list | grep vagrant-vbguest
+  register: vbguest_list
+  ignore_errors: yes
+- shell: vagrant plugin install vagrant-vbguest
+  when:  vbguest_list | failed

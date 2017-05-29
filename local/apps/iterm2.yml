@@ -1,0 +1,6 @@
+---
+- name: "Install iTerm2"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/iTerm.app"
+           download_url="https://iterm2.com/downloads/stable/iTerm2_v2_0.zip"
+           download_to="iterm2.zip"

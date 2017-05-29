@@ -1,0 +1,16 @@
+---
+- name: Install {{name}}
+  debug: msg="teeheee {{name}} from {{download_url}} into {{downloads}}"
+
+- get_url: url={{ download_url }} dest={{ downloads }}/{{ filename }}
+
+- command: ls ~/
+  register: list
+
+- name: Mount {{ name }} image
+  command: hdiutil attach -mountpoint /Volumes/{{filename}} {{filename}} chdir={{ downloads }}
+  when: filename | match(".*.dmg$")
+
+- debug: msg="{{item}}"
+  with_items: list.stdout_lines
+

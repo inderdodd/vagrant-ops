@@ -1,0 +1,21 @@
+---
+- hosts: local
+  connection: local
+  gather_facts: true
+
+  vars:
+    - downloads: ~/.ansible-downloads/
+
+  tasks:
+    - name: Create Ansible downloads directory
+      file: path={{ downloads }} state=directory
+
+    - name: Create LaunchAgents directory
+      file: path="~/Library/LaunchAgents" state=directory
+
+    # - include: apps/zsh.yml
+    - include: apps/homebrew.yml
+    - include: apps/vim.yml
+    - include: apps/base.yml
+    - include: apps/rails.yml
+    # - include: apps/sophosav.yml

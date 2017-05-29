@@ -1,0 +1,8 @@
+---
+- name: "Install Vagrant"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/Vagrant/bin/vagrant"
+           download_url="https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3.dmg"
+           download_to="vagrant.dmg"
+
+

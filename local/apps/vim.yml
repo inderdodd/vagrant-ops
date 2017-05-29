@@ -1,0 +1,6 @@
+---
+- homebrew: name=python3 state=present
+- homebrew: name=vim state=present install_options='with-python,with-lua'
+
+- lineinfile: create=yes dest=~/.bashrc line='alias vi=vim'
+- lineinfile: create=yes dest=~/.zshrc line='alias vi=vim'

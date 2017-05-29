@@ -1,0 +1,8 @@
+---
+- name: "Install nvALT"
+  mac_app: downloads_dir={{downloads}}
+           path_check="/Applications/nvALT.app"
+           download_url="http://abyss.designheresy.com/nvaltb/nvalt2.2b106.zip"
+           download_to="nvalt.zip"
+
+
